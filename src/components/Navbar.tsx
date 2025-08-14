@@ -39,6 +39,10 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const downloadPDF = () => {
+    window.open("/api/export-pdf", "_blank");
+  };
+
   return (
     <header className="relative">
       <div className="flex justify-between items-center p-4 bg-white dark:bg-gray-900">
@@ -74,6 +78,13 @@ export default function Navbar() {
           <CiYoutube className="cursor-pointer hover:text-blue-500 dark:hover:text-blue-400" />
           <span className="rotate-180 text-gray-300 dark:text-gray-600">|</span>
           <Toggle />
+          <span className="rotate-180 text-gray-300 dark:text-gray-600">|</span>
+          <button
+            onClick={downloadPDF}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+          >
+            Download PDF
+          </button>
         </nav>
 
         <button
@@ -127,8 +138,17 @@ export default function Navbar() {
               <GiGraduateCap className="text-2xl text-gray-700 dark:text-gray-300" />
               <CiYoutube className="text-2xl text-gray-700 dark:text-gray-300" />
             </div>
-            <div className="flex justify-center items-center mt-4">
+            <div className="flex justify-evenly items-center mt-4">
               <Toggle />
+              <span className="rotate-180 text-gray-300 dark:text-gray-600">
+                |
+              </span>
+              <button
+                onClick={downloadPDF}
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+              >
+                Download PDF
+              </button>
             </div>
           </div>
 
